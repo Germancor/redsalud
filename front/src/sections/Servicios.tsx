@@ -27,29 +27,6 @@ const beneficiosPrincipales = [
   },
 ]
 
-const serviciosAdicionales = [
-  {
-    icon: Eye,
-    title: 'Guardia Oftalmológica 24 hs',
-    text: 'Atención especializada en Centro de Ojos Dr. Argañaraz y Centro de la Visión Dr. Jure.',
-  },
-  {
-    icon: Stethoscope,
-    title: 'Especialidades Médicas',
-    text: 'Consultorios propios y externos con coseguros pactados a precios accesibles.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Prácticas de Diagnóstico',
-    text: 'Acceso a prácticas de rutina y exámenes complementarios de diagnóstico.',
-  },
-  {
-    icon: Heart,
-    title: 'Servicio de Sepelio',
-    text: 'Cobertura integral con sala velatoria, ataúd bóveda, traslados e impuestos incluidos.',
-  },
-]
-
 export default function Servicios() {
   return (
     <section id="servicios" className="py-20 sm:py-28 bg-white">
@@ -85,21 +62,68 @@ export default function Servicios() {
 
         {/* Sección de Otros Servicios */}
         <div className="bg-gray-50 rounded-[3rem] p-8 sm:p-12">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Cobertura Médica y Social</h3>
               <div className="grid gap-6">
-                {serviciosAdicionales.map((item) => (
-                  <div key={item.title} className="flex gap-4">
-                    <div className="shrink-0 w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm">
-                      <item.icon className="w-6 h-6 text-[#00BCD4]" />
+                
+                {/* Tarjeta Especial: Guardia Oftalmológica con ubicaciones */}
+                <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#00BCD4]/20">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center">
+                      <Eye className="w-6 h-6 text-[#00BCD4]" />
                     </div>
-                    <div>
-                      <h4 className="font-bold text-gray-900 mb-1">{item.title}</h4>
-                      <p className="text-sm text-gray-600 leading-relaxed">{item.text}</p>
+                    <h4 className="font-bold text-gray-900">Guardia Oftalmológica 24 hs</h4>
+                  </div>
+                  <div className="space-y-4 ml-2">
+                    <div className="flex items-start gap-3">
+                      <MapPin className="w-4 h-4 text-[#00BCD4] mt-1 shrink-0" />
+                      <div>
+                        <p className="text-sm font-semibold text-gray-900">Centro de Ojos Dr. Argañaraz</p>
+                        <p className="text-xs text-gray-500">San Juan 585, S.M.T.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <MapPin className="w-4 h-4 text-[#00BCD4] mt-1 shrink-0" />
+                      <div>
+                        <p className="text-sm font-semibold text-gray-900">Centro de la Visión Dr. Jure</p>
+                        <p className="text-xs text-gray-500">Maipú 550, S.M.T.</p>
+                      </div>
                     </div>
                   </div>
-                ))}
+                </div>
+
+                {/* Resto de los servicios */}
+                <div className="flex gap-4">
+                  <div className="shrink-0 w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm">
+                    <Stethoscope className="w-6 h-6 text-[#00BCD4]" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 mb-1">Especialidades Médicas</h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">Consultorios propios y externos con coseguros pactados a precios accesibles.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="shrink-0 w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm">
+                    <ShieldCheck className="w-6 h-6 text-[#00BCD4]" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 mb-1">Prácticas de Diagnóstico</h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">Acceso a prácticas de rutina y exámenes complementarios de diagnóstico.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="shrink-0 w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm">
+                    <Heart className="w-6 h-6 text-[#00BCD4]" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 mb-1">Servicio de Sepelio</h4>
+                    <p className="text-sm text-gray-600 leading-relaxed">Cobertura integral con sala velatoria, ataúd bóveda, traslados e impuestos incluidos.</p>
+                  </div>
+                </div>
+
               </div>
             </div>
 
@@ -107,15 +131,15 @@ export default function Servicios() {
             <div className="relative">
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <img 
-                  src="/redsalud.jpg" 
+                  src="/servicio-medico.jpg" 
                   alt="Atención Médica Red Salud" 
                   className="w-full h-full object-cover"
                 />
               </div>
-              {/* Floating Badge */}
+              {/* Floating Badge (Ahora en celeste) */}
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-50 max-w-[240px]">
                 <div className="flex items-center gap-3 mb-2">
-                  <MapPin className="w-5 h-5 text-[#E91E63]" />
+                  <MapPin className="w-5 h-5 text-[#00BCD4]" />
                   <span className="font-bold text-gray-900">Presencia Local</span>
                 </div>
                 <p className="text-xs text-gray-500">

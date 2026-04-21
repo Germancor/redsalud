@@ -106,7 +106,7 @@ export default function FAQ() {
             href="https://wa.me/5493816603741?text=Hola,%20tengo%20una%20pregunta%20sobre%20Red%20Salud%20Tucumán"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-gradient-brand rounded-full hover:shadow-lg hover:shadow-[#E91E63]/25 transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-gradient-brand rounded-full hover:shadow-lg hover:shadow-[#00BCD4]/25 transition-all"
           >
             <MessageCircle className="w-4 h-4" />
             Escribinos por WhatsApp
