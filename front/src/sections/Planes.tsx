@@ -1,36 +1,33 @@
-import { Check, MessageCircle, Sparkles } from 'lucide-react'
+import { Check, MessageCircle, Sparkles, Phone } from 'lucide-react'
 
-const planes = [
+// 1. Array para los 3 planes de Salud + Sepelio
+const planesSalud = [
   {
     name: 'Plan Primario',
     subtitle: 'Salud + Sepelio',
     price: 'Consultar',
-    description: 'Cobertura esencial con acceso a especialidades médicas y servicios de sepelio básicos.',
     features: [
-      'Especialidades médicas: Consultorios propios y externos con coseguros accesibles',
-      'Prácticas de Diagnóstico: Rutina, exámenes complementarios y de diagnóstico',
+      'Especialidades médicas: Consultorios propios y externos',
+      'Prácticas de Diagnóstico y exámenes de rutina',
       'Descuentos en farmacia: Hasta 30%',
-      'Emergencia y urgencia a domicilio: Arancel mínimo las 24 hs',
-      'Sepelio: Sala velatoria o capilla ardiente en domicilio',
-      'Inhumación incluida',
+      'Emergencia y urgencia a domicilio 24 hs',
+      'Sepelio: Sala velatoria o capilla ardiente',
       'Cementerio disponible: San Antonio de Padua',
     ],
     popular: false,
-    whatsappMsg: 'Hola,%20quiero%20recibir%20información%20sobre%20el%20Plan%20Primario',
+    whatsappMsg: 'Hola,%20quiero%20información%20sobre%20el%20Plan%20Primario',
   },
   {
     name: 'Plan Clásico',
     subtitle: 'Salud + Sepelio Intermedio',
     price: 'Consultar',
-    description: 'Nivel intermedio con mayor variedad de cementerios disponibles para la familia.',
     features: [
-      'Especialidades médicas con coseguros a precios accesibles',
+      'Especialidades médicas con coseguros accesibles',
       'Prácticas de Diagnóstico y exámenes complementarios',
       'Descuentos en farmacia de hasta 30%',
-      'Emergencia, urgencia y consulta médica a domicilio 24 hs',
-      'Sepelio: Sala velatoria o capilla ardiente en domicilio',
-      'Inhumación incluida',
-      'Cementerios: San Antonio de Padua, Parque Sereno y Parque de la Paz',
+      'Emergencia y consulta médica a domicilio 24 hs',
+      'Sepelio: Sala velatoria o capilla ardiente',
+      'Cementerios: San Antonio, Parque Sereno y Parque de la Paz',
     ],
     popular: true,
   },
@@ -38,125 +35,147 @@ const planes = [
     name: 'Plan Premium',
     subtitle: 'Salud + Sepelio Completo',
     price: 'Consultar',
-    description: 'La cobertura más completa con opción de cremación y acceso a todos los cementerios.',
     features: [
       'Especialidades médicas en consultorios propios y externos',
-      'Prácticas de Diagnóstico y exámenes de diagnóstico',
+      'Prácticas de Diagnóstico de alta complejidad',
       'Descuentos en farmacia de hasta 30%',
-      'Emergencia, urgencia y consulta médica a domicilio 24 hs',
-      'Sepelio: Sala velatoria o capilla ardiente en domicilio',
+      'Emergencia y consulta médica a domicilio 24 hs',
       'Opción Inhumación o Cremación',
-      'Cementerios: San Antonio, Parque Sereno, Parque de la Paz y Jardín del Cielo',
+      'Cementerios: San Antonio, Sereno, La Paz y Jardín del Cielo',
     ],
     popular: false,
-    whatsappMsg: 'Hola,%20quiero%20recibir%20información%20sobre%20el%20Plan%20Premium',
+    whatsappMsg: 'Hola,%20quiero%20información%20sobre%20el%20Plan%20Premium',
   },
 ]
+
+// 2. Objeto separado para el Plan Sepelio (Tarjeta Ancha)
+const infoSepelio = {
+  titulo: 'Plan Sepelio',
+  descripcion: 'Servicios sociales integrales con cobertura en toda la provincia.',
+  telefono: '381 544 7295',
+  especificaciones: [
+    'Ataúd bóveda convencional',
+    'Sala velatoria o servicio de capilla ardiente en domicilio',
+    'Carroza de duelo y coche de acompañamiento',
+    'Impuestos sin cargo: Inhumación, excavación y sellado',
+    'Gastos administrativos provinciales y municipales incluidos',
+    'Servicio de emergencia médica y consulta a domicilio',
+  ],
+  notaCremacion: 'Módulo cremación: Costo adicional',
+  imagen: '/servicio-sepelio.jpg'
+}
 
 export default function Planes() {
   return (
     <section id="planes" className="py-20 sm:py-28 bg-white relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#E91E63]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#00BCD4]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="inline-block px-4 py-1.5 bg-[#00BCD4]/10 text-[#00BCD4] rounded-full text-sm font-medium mb-4">
             Planes y servicios
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Elegí la protección que tu familia necesita
+            Elegí la protección para tu familia
           </h2>
-          <p className="text-lg text-gray-600">
-            Nuestros planes están diseñados para brindar tranquilidad médica y respaldo en servicios sociales.
-          </p>
         </div>
 
-        {/* Planes Grid */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
-          {planes.map((plan) => (
+        {/* Grid de 3 planes de Salud */}
+        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+          {planesSalud.map((plan) => (
             <div
               key={plan.name}
-              className={`relative rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1 flex flex-col ${
+              className={`relative rounded-3xl p-8 flex flex-col transition-all duration-300 ${
                 plan.popular
-                  ? 'bg-gradient-to-br from-gray-900 to-gray-800 text-white shadow-2xl shadow-gray-900/20 scale-105 z-10'
-                  : 'bg-white border-2 border-gray-100 shadow-card hover:shadow-card-hover'
+                  ? 'bg-gradient-to-br from-gray-900 to-gray-800 text-white shadow-2xl scale-105 z-10'
+                  : 'bg-white border-2 border-gray-100 shadow-sm'
               }`}
             >
-              {/* Popular badge */}
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-gradient-brand text-white rounded-full text-sm font-semibold shadow-lg whitespace-nowrap">
+                  <span className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-gradient-brand text-white rounded-full text-sm font-semibold shadow-lg">
                     <Sparkles className="w-4 h-4" />
-                    Más recomendado
+                    Recomendado
                   </span>
                 </div>
               )}
-
-              {/* Plan header */}
               <div className="mb-6">
-                <h3 className={`text-xl font-bold mb-1 ${plan.popular ? 'text-white' : 'text-gray-900'}`}>
-                  {plan.name}
-                </h3>
-                <p className={`text-sm ${plan.popular ? 'text-gray-300' : 'text-gray-500'}`}>
-                  {plan.subtitle}
-                </p>
+                <h3 className="text-xl font-bold">{plan.name}</h3>
+                <p className={`text-sm ${plan.popular ? 'text-gray-400' : 'text-gray-500'}`}>{plan.subtitle}</p>
               </div>
-
-              {/* Price */}
-              <div className="mb-6">
-                <div className="flex items-baseline gap-1">
-                  {plan.price !== 'Consultar' && (
-                    <span className={`text-sm ${plan.popular ? 'text-gray-400' : 'text-gray-500'}`}>$</span>
-                  )}
-                  <span className={`text-4xl font-extrabold ${plan.popular ? 'text-white' : 'text-gray-900'}`}>
-                    {plan.price}
-                  </span>
-                </div>
-                <p className={`text-sm mt-2 leading-relaxed ${plan.popular ? 'text-gray-400' : 'text-gray-500'}`}>
-                  {plan.description}
-                </p>
-              </div>
-
-              {/* Features */}
+              <div className="text-4xl font-extrabold mb-6">{plan.price}</div>
               <ul className="space-y-4 mb-8 flex-grow">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
-                      plan.popular ? 'bg-[#E91E63]' : 'bg-green-100'
-                    }`}>
-                      <Check className={`w-3 h-3 ${plan.popular ? 'text-white' : 'text-green-600'}`} />
-                    </div>
-                    <span className={`text-sm leading-snug ${plan.popular ? 'text-gray-300' : 'text-gray-600'}`}>
-                      {feature}
-                    </span>
+                {plan.features.map((f) => (
+                  <li key={f} className="flex items-start gap-3">
+                    <Check className={`w-4 h-4 mt-1 shrink-0 ${plan.popular ? 'text-[#00BCD4]' : 'text-green-500'}`} />
+                    <span className="text-sm opacity-90">{f}</span>
                   </li>
                 ))}
               </ul>
-
-              {/* CTA */}
               <a
-                href={`https://wa.me/5493816603741?text=${plan.whatsappMsg || 'Hola,%20quiero%20conocer%20más%20sobre%20este%20plan'}`}
+                href={`https://wa.me/5493816603741?text=${plan.whatsappMsg || 'Hola'}`}
                 target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center justify-center gap-2 w-full py-4 rounded-xl text-sm font-semibold transition-all hover:shadow-lg mt-auto ${
-                  plan.popular
-                    ? 'bg-gradient-brand text-white hover:shadow-[#E91E63]/25'
-                    : 'bg-gray-900 text-white hover:bg-gray-800'
+                className={`w-full py-4 rounded-xl text-center font-bold transition-all ${
+                  plan.popular ? 'bg-gradient-brand text-white' : 'bg-gray-900 text-white'
                 }`}
               >
-                <MessageCircle className="w-4 h-4" />
-                Consultar por WhatsApp
+                Consultar plan
               </a>
             </div>
           ))}
         </div>
 
-        {/* Note */}
-        <p className="text-center text-sm text-gray-500 mt-12 max-w-2xl mx-auto italic">
-          * Los precios y disponibilidad están sujetos a consulta. El servicio de sepelio incluye traslados y gestiones administrativas en toda la provincia.
+        <p className="text-center text-xs text-gray-400 mb-16 italic">
+          * Los precios y disponibilidad de cementerios están sujetos a consulta según el plan elegido.
         </p>
+
+        {/* Tarjeta Ancha: Plan Sepelio */}
+        <div className="bg-gray-50 border border-gray-100 rounded-[2.5rem] p-8 md:p-12 shadow-sm relative overflow-hidden">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            
+            {/* Columna Izquierda: Información */}
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-3xl font-black text-[#00BCD4] uppercase italic tracking-tighter mb-2">
+                  {infoSepelio.titulo}
+                </h3>
+                <p className="text-gray-600 font-medium">{infoSepelio.descripcion}</p>
+              </div>
+
+              <div className="flex items-center gap-3 p-4 bg-white rounded-2xl shadow-sm border border-gray-100 w-fit">
+                <Phone className="w-5 h-5 text-green-500" />
+                <a href={`tel:${infoSepelio.telefono}`} className="text-xl font-bold text-gray-900 hover:text-[#00BCD4] transition-colors">
+                  {infoSepelio.telefono}
+                </a>
+              </div>
+
+              <ul className="grid sm:grid-cols-1 gap-3">
+                {infoSepelio.especificaciones.map((spec) => (
+                  <li key={spec} className="flex items-center gap-3 text-sm text-gray-700">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#00BCD4] shrink-0" />
+                    {spec}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="inline-block px-4 py-2 bg-cyan-100 text-[#00BCD4] rounded-lg text-sm font-bold border border-cyan-200">
+                {infoSepelio.notaCremacion}
+              </div>
+            </div>
+
+            {/* Columna Derecha: Imagen */}
+            <div className="relative flex justify-center lg:justify-end">
+              <div className="w-full max-w-sm aspect-square rounded-3xl overflow-hidden shadow-2xl border-8 border-white transform lg:rotate-3 hover:rotate-0 transition-transform duration-500">
+                <img 
+                  src={infoSepelio.imagen} 
+                  alt="Plan Sepelio Red Salud" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </section>
   )
