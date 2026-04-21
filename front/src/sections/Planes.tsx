@@ -1,4 +1,4 @@
-import { Check, MessageCircle, Sparkles, Phone } from 'lucide-react'
+import { Check, Sparkles, Phone } from 'lucide-react'
 
 // 1. Array para los 3 planes de Salud + Sepelio
 const planesSalud = [
