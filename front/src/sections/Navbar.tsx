@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Menu, X, Phone, MessageCircle } from 'lucide-react'
+import { Menu, X, Phone } from 'lucide-react'
 
 const navLinks = [
   { label: 'Servicios', href: '#servicios' },
@@ -40,7 +40,7 @@ export default function Navbar() {
           scrolled ? 'max-h-0 opacity-0' : 'max-h-10 opacity-100'
         }`}
       >
-        <div className="bg-[#E91E63] text-white text-xs">
+        <div className="bg-[#00BCD4] text-white text-xs">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <a
@@ -65,7 +65,7 @@ export default function Navbar() {
               <span className="text-white font-bold text-lg">R</span>
             </div>
             <div className="leading-tight">
-              <span className="text-lg font-bold text-[#E91E63] block -mb-0.5">Red Salud</span>
+              <span className="text-lg font-bold text-[#00BCD4] block -mb-0.5">Red Salud</span>
               <span className="text-xs text-gray-500 font-medium">Tucumán</span>
             </div>
           </a>
@@ -76,32 +76,12 @@ export default function Navbar() {
               <button
                 key={link.href}
                 onClick={() => handleClick(link.href)}
-                className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-[#E91E63] rounded-lg hover:bg-[#E91E63]/5 transition-colors"
+                className="px-3 py-2 text-sm font-medium text-gray-600 hover:text-[#00BCD4] rounded-lg hover:bg-[#00BCD4]/5 transition-colors"
               >
                 {link.label}
               </button>
             ))}
           </nav>
-
-          {/* CTA buttons */}
-          <div className="hidden lg:flex items-center gap-3">
-            <a
-              href="tel:+5493816603741"
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 hover:text-[#E91E63] border border-gray-200 rounded-full hover:border-[#E91E63]/30 transition-all"
-            >
-              <Phone className="w-4 h-4" />
-              Llamar
-            </a>
-            <a
-              href="https://wa.me/5493816603741?text=Hola,%20quiero%20recibir%20información%20sobre%20Red%20Salud%20Tucumán"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-gradient-brand rounded-full hover:shadow-lg hover:shadow-[#E91E63]/25 transition-all hover:-translate-y-0.5"
-            >
-              <MessageCircle className="w-4 h-4" />
-              WhatsApp
-            </a>
-          </div>
 
           {/* Mobile menu button */}
           <button
@@ -129,29 +109,11 @@ export default function Navbar() {
               <button
                 key={link.href}
                 onClick={() => handleClick(link.href)}
-                className="px-4 py-3 text-left text-sm font-medium text-gray-700 hover:text-[#E91E63] hover:bg-[#E91E63]/5 rounded-xl transition-colors"
+                className="px-4 py-3 text-left text-sm font-medium text-gray-700 hover:text-[#00BCD4] hover:bg-[#00BCD4]/5 rounded-xl transition-colors"
               >
                 {link.label}
               </button>
             ))}
-            <div className="mt-3 pt-3 border-t border-gray-100 flex flex-col gap-2">
-              <a
-                href="tel:+5493816603741"
-                className="flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-gray-700 border border-gray-200 rounded-xl"
-              >
-                <Phone className="w-4 h-4" />
-                381-660-3741
-              </a>
-              <a
-                href="https://wa.me/5493816603741?text=Hola,%20quiero%20recibir%20información%20sobre%20Red%20Salud%20Tucumán"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-white bg-gradient-brand rounded-xl"
-              >
-                <MessageCircle className="w-4 h-4" />
-                Escribir por WhatsApp
-              </a>
-            </div>
           </nav>
         </div>
       </div>

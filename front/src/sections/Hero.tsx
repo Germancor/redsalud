@@ -11,27 +11,26 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50/30">
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-[#E91E63]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
+        <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-[#00BCD4]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00BCD4]/5 rounded-full blur-3xl translate-y-1/4 -translate-x-1/4" />
       </div>
-
+    
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Content */}
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#E91E63]/10 text-[#E91E63] rounded-full text-sm font-medium mb-6">
+            <br />
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#00BCD4]/10 text-[#00BCD4] rounded-full text-sm font-medium mb-6">
               <Shield className="w-4 h-4" />
               Cobertura médica + Sepelio en Tucumán
             </div>
 
+            {/* Título principal ahora todo negro */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-[1.1] mb-6">
-              Protegé a tu familia con{' '}
-              <span className="text-gradient">cobertura médica y sepelio</span>
+              Protegé a tu familia con cobertura médica y sepelio
             </h1>
 
             <p className="text-lg sm:text-xl text-gray-600 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-              Un servicio pensado para vos y tu familia, que reúne cobertura médica con amplia cartilla y servicio de sepelio integral.{' '}
-              <strong className="text-gray-800">Tranquilidad real cuando más la necesitás.</strong>
+              Un servicio pensado para vos y tu familia, que reúne cobertura médica con amplia cartilla y servicio de sepelio integral.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">

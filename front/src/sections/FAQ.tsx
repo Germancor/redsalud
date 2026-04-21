@@ -62,7 +62,7 @@ export default function FAQ() {
               key={index}
               className={`rounded-2xl border transition-all duration-300 ${
                 openIndex === index
-                  ? 'border-[#E91E63]/20 bg-[#E91E63]/[0.02] shadow-md'
+                  ? 'border-[#00BCD4]/20 bg-[#00BCD4]/[0.02] shadow-md'
                   : 'border-gray-200 bg-white hover:border-gray-300'
               }`}
             >
@@ -72,17 +72,17 @@ export default function FAQ() {
               >
                 <div className="flex items-center gap-3 pr-4">
                   <HelpCircle className={`w-5 h-5 flex-shrink-0 ${
-                    openIndex === index ? 'text-[#E91E63]' : 'text-gray-400'
+                    openIndex === index ? 'text-[#00BCD4]' : 'text-gray-400'
                   }`} />
                   <span className={`font-semibold ${
-                    openIndex === index ? 'text-[#E91E63]' : 'text-gray-900'
+                    openIndex === index ? 'text-[#00BCD4]' : 'text-gray-900'
                   }`}>
                     {faq.question}
                   </span>
                 </div>
                 <ChevronDown
                   className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-300 ${
-                    openIndex === index ? 'rotate-180 text-[#E91E63]' : ''
+                    openIndex === index ? 'rotate-180 text-[#00BCD4]' : ''
                   }`}
                 />
               </button>

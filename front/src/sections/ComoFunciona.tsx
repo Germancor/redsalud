@@ -41,7 +41,7 @@ export default function ComoFunciona() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 bg-[#E91E63]/10 text-[#E91E63] rounded-full text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 bg-[#00BCD4]/10 text-[#00BCD4] rounded-full text-sm font-medium mb-4">
             Simple y rápido
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">

@@ -56,7 +56,7 @@ export default function Servicios() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 bg-[#E91E63]/10 text-[#E91E63] rounded-full text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 bg-[#00BCD4]/10 text-[#00BCD4] rounded-full text-sm font-medium mb-4">
             Nuestros servicios
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -92,7 +92,7 @@ export default function Servicios() {
                 {serviciosAdicionales.map((item) => (
                   <div key={item.title} className="flex gap-4">
                     <div className="shrink-0 w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-sm">
-                      <item.icon className="w-6 h-6 text-[#E91E63]" />
+                      <item.icon className="w-6 h-6 text-[#00BCD4]" />
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900 mb-1">{item.title}</h4>
@@ -115,7 +115,7 @@ export default function Servicios() {
               {/* Floating Badge */}
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-50 max-w-[240px]">
                 <div className="flex items-center gap-3 mb-2">
-                  <MapPin className="w-5 h-5 text-[#00BCD4]" />
+                  <MapPin className="w-5 h-5 text-[#E91E63]" />
                   <span className="font-bold text-gray-900">Presencia Local</span>
                 </div>
                 <p className="text-xs text-gray-500">
