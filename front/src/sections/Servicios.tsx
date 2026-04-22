@@ -1,10 +1,40 @@
 import { useState } from 'react'
 import { 
   Stethoscope, Pill, Ambulance, Heart, Microscope, 
-  Eye, ShieldCheck, MapPin, Activity, X, Phone 
+  Eye, ShieldCheck, MapPin, Activity, X, Phone, ChevronDown 
 } from 'lucide-react'
 
-// Datos detallados para los Modales (Sin marcas de texto extrañas)
+const AccordionZone = ({ title, children, colorClass, borderClass, bgClass, icon: Icon }: any) => {
+  const [isOpen, setIsOpen] = useState(false)
+  
+  return (
+    <div className={`border ${borderClass} rounded-xl overflow-hidden mb-3 bg-white shadow-sm transition-all`}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={`w-full p-4 flex items-center justify-between hover:${bgClass} transition-colors`}
+      >
+        <div className="flex items-center gap-3">
+          {Icon && <Icon className={`w-5 h-5 ${colorClass} shrink-0`} />}
+          <span className="font-bold text-gray-900 text-left">{title}</span>
+        </div>
+        <div className={`p-1.5 rounded-full ${bgClass} ${colorClass} shrink-0`}>
+          <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+        </div>
+      </button>
+      <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+        <div className="overflow-hidden">
+          <div className={`p-4 pt-0 border-t ${borderClass} text-sm space-y-3 mt-2`}>
+            <div className="pt-3 flex flex-col gap-3">
+              {children}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// Datos detallados para los Modales
 const detalleServicios = {
   'Ambulancia': {
     title: 'Servicio de Ambulancia (SEM)',
@@ -38,7 +68,7 @@ const detalleServicios = {
           <MapPin className="w-5 h-5 text-red-500 shrink-0" />
           <div>
             <p className="font-bold text-gray-900 text-base">Sanatorio del Sur</p>
-            <p className="text-gray-600">Santiago 1251, San Miguel de Tucumán</p>
+            <p className="text-gray-600">LAS HERAS 575, San Miguel de Tucumán</p>
           </div>
         </div>
         <div className="bg-red-50 p-4 rounded-xl flex flex-col gap-3">
@@ -57,36 +87,100 @@ const detalleServicios = {
     color: 'text-emerald-600',
     content: (
       <div className="space-y-4">
-        <p className="text-sm text-gray-600">Descuentos exclusivos presentando autorización previa en casa central.</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm bg-emerald-50 p-5 rounded-xl border border-emerald-100">
-          <div className="space-y-1">
-            <p className="font-bold text-emerald-800 border-b border-emerald-200 pb-1 mb-2">S.M. de Tucumán</p>
-            <p className="text-gray-700">• Lab. EMC</p>
-            <p className="text-gray-700">• Lab. Alvarez Ali</p>
-            <p className="text-gray-700">• Lab. Sarmiento</p>
-            <p className="text-gray-700">• Lab. Borda</p>
-          </div>
-          <div className="space-y-1">
-            <p className="font-bold text-emerald-800 border-b border-emerald-200 pb-1 mb-2">Yerba Buena</p>
-            <p className="text-gray-700">• Lab. Auad</p>
-          </div>
-          <div className="space-y-1">
-            <p className="font-bold text-emerald-800 border-b border-emerald-200 pb-1 mb-2">Banda del Río Salí</p>
-            <p className="text-gray-700">• Lab. Rondia</p>
-            <p className="text-gray-700">• Lab. Sarmiento</p>
-          </div>
-          <div className="space-y-1">
-            <p className="font-bold text-emerald-800 border-b border-emerald-200 pb-1 mb-2">Alderetes</p>
-            <p className="text-gray-700">• Lab. Silvia Rodriguez</p>
-            <p className="text-gray-700">• Lab. Mayol</p>
-          </div>
-          <div className="space-y-1 sm:col-span-2 mt-2">
-            <p className="font-bold text-emerald-800 border-b border-emerald-200 pb-1 mb-2">La Florida y Lastenia</p>
-            <p className="text-gray-700">• Laboratorios adheridos en la zona</p>
-          </div>
+        <div className="bg-emerald-100 border border-emerald-200 text-emerald-900 p-3 rounded-xl text-sm font-bold text-center shadow-sm">
+          REQUISITO: AUTORIZACIÓN PREVIAMENTE
         </div>
-        <div className="text-center p-2">
-          <span className="inline-block px-4 py-1.5 bg-emerald-100 text-emerald-800 font-bold rounded-full text-xs uppercase tracking-wide">
+        <p className="text-sm text-gray-600 mb-2">Desplegá tu zona para ver los centros adheridos:</p>
+        
+        <div className="space-y-2">
+          {/* SMT */}
+          <AccordionZone title="San Miguel de Tucumán" colorClass="text-emerald-600" borderClass="border-emerald-100" bgClass="bg-emerald-50" icon={Microscope}>
+            {[
+              { nombre: 'Lab. EMC', dir: 'Monteagudo 719', tel: 'Por turnos 4220613' },
+              { nombre: 'Lab. Alvarez Ali', dir: 'Av. Mitre 9', tel: '4977282 / 3813599837' },
+              { nombre: 'Lab. Sarmiento', dir: 'Lavalle 868', tel: '3813543557' },
+              { nombre: 'Lab. Sarmiento', dir: 'Av. Sarmiento 784', tel: '3816812186' },
+              { nombre: 'Lab. Borda', dir: 'Salta 88', tel: '4301139' },
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
+                <div>
+                  <p className="text-gray-900 font-bold">{item.nombre}</p>
+                  <p className="text-gray-600">{item.dir}</p>
+                  <p className="text-emerald-700 text-xs font-bold mt-0.5">📞 {item.tel}</p>
+                </div>
+              </div>
+            ))}
+          </AccordionZone>
+
+          {/* Yerba Buena */}
+          <AccordionZone title="Yerba Buena" colorClass="text-emerald-600" borderClass="border-emerald-100" bgClass="bg-emerald-50" icon={Microscope}>
+            <div className="flex items-start gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
+              <div>
+                <p className="text-gray-900 font-bold">Lab. Auda</p>
+                <p className="text-gray-600">Av. Aconquija 1296</p>
+                <p className="text-emerald-700 text-xs font-bold mt-0.5">📞 2547093</p>
+              </div>
+            </div>
+          </AccordionZone>
+
+          {/* Alderetes */}
+          <AccordionZone title="Alderetes" colorClass="text-emerald-600" borderClass="border-emerald-100" bgClass="bg-emerald-50" icon={Microscope}>
+            {[
+              { nombre: 'Lab. Silvia Rodriguez', dir: 'Av. Rivadavia 575', tel: '3816452170' },
+              { nombre: 'Lab. Mayol', dir: 'Av. Rivadavia 1450', tel: '4940381' },
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
+                <div>
+                  <p className="text-gray-900 font-bold">{item.nombre}</p>
+                  <p className="text-gray-600">{item.dir}</p>
+                  <p className="text-emerald-700 text-xs font-bold mt-0.5">📞 {item.tel}</p>
+                </div>
+              </div>
+            ))}
+          </AccordionZone>
+
+          {/* BRS */}
+          <AccordionZone title="Banda del Río Salí" colorClass="text-emerald-600" borderClass="border-emerald-100" bgClass="bg-emerald-50" icon={Microscope}>
+            {[
+              { nombre: 'Lab. Rondia', dir: 'Lavalle 291 Local 3', tel: '3816431688' },
+              { nombre: 'Lab. Sarmiento', dir: 'Av. Monseñor Diaz 459', tel: '426500' },
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
+                <div>
+                  <p className="text-gray-900 font-bold">{item.nombre}</p>
+                  <p className="text-gray-600">{item.dir}</p>
+                  <p className="text-emerald-700 text-xs font-bold mt-0.5">📞 {item.tel}</p>
+                </div>
+              </div>
+            ))}
+          </AccordionZone>
+
+          {/* La Florida y Lastenia */}
+          <AccordionZone title="La Florida y Lastenia" colorClass="text-emerald-600" borderClass="border-emerald-100" bgClass="bg-emerald-50" icon={Microscope}>
+            <div className="flex items-start gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
+              <div>
+                <p className="text-gray-900 font-bold">Lab. Silvia Rodriguez (La Florida)</p>
+                <p className="text-gray-600">Tornquist 19</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
+              <div>
+                <p className="text-gray-900 font-bold">Lab. Silvia Rodriguez (Lastenia)</p>
+                <p className="text-gray-600">República 335</p>
+                <p className="text-emerald-700 text-xs font-bold mt-0.5">📞 3816452170</p>
+              </div>
+            </div>
+          </AccordionZone>
+        </div>
+
+        <div className="text-center p-2 mt-4">
+          <span className="inline-block px-4 py-2 bg-emerald-100 text-emerald-800 font-bold rounded-full text-xs uppercase tracking-wide">
             Descuentos del 20% al 30%
           </span>
         </div>
@@ -99,46 +193,90 @@ const detalleServicios = {
     color: 'text-amber-600',
     content: (
       <div className="space-y-4">
-        <p className="text-sm text-gray-600">Requisito indispensable: Presentar pedido médico autorizado con Nombre y DNI.</p>
-        <div className="space-y-3">
-          <div className="flex items-start gap-3 p-3 bg-amber-50 rounded-xl text-sm border border-amber-100">
-            <MapPin className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-            <div>
-              <p className="font-bold text-gray-900">Farmacia La Plazoleta</p>
-              <p className="text-gray-600 text-xs">Av. Mitre 591, San Miguel de Tucumán</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3 p-3 bg-amber-50 rounded-xl text-sm border border-amber-100">
-            <MapPin className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-            <div>
-              <p className="font-bold text-gray-900">Farmacia Las Salinas</p>
-              <p className="text-gray-600 text-xs">Av. Rivadavia 1090, Alderetes</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3 p-3 bg-amber-50 rounded-xl text-sm border border-amber-100">
-            <MapPin className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-            <div>
-              <p className="font-bold text-gray-900">Farmacia San Benito</p>
-              <p className="text-gray-600 text-xs">Av. Monseñor Díaz 601, Banda del Río Salí</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3 p-3 bg-amber-50 rounded-xl text-sm border border-amber-100">
-            <MapPin className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-            <div>
-              <p className="font-bold text-gray-900">Farmacia Ingenio La Florida</p>
-              <p className="text-gray-600 text-xs">La Florida</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3 p-3 bg-amber-50 rounded-xl text-sm border border-amber-100">
-            <MapPin className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-            <div>
-              <p className="font-bold text-gray-900">Farmacia Del Pueblo</p>
-              <p className="text-gray-600 text-xs">Lastenia</p>
-            </div>
-          </div>
+        <div className="bg-amber-100 border border-amber-200 text-amber-900 p-3 rounded-xl text-sm font-bold text-center shadow-sm">
+          REQUISITO: AUTORIZACIÓN PREVIAMENTE
         </div>
-        <div className="text-center p-2 mt-2">
-          <span className="inline-block px-4 py-1.5 bg-amber-100 text-amber-800 font-bold rounded-full text-xs uppercase tracking-wide">
+        <p className="text-sm text-gray-600 mb-2">Desplegá la farmacia para ver sus sucursales:</p>
+        
+        <div className="space-y-2">
+          {/* La Plazoleta */}
+          <AccordionZone title="Farmacia La Plazoleta" colorClass="text-amber-600" borderClass="border-amber-100" bgClass="bg-amber-50" icon={MapPin}>
+            {[
+              { dir: 'Av. Rep del Líbano y España', tel: '4323175' },
+              { dir: 'Av. Belgrano 162', tel: '4238659' },
+              { dir: 'Av. Soldati 86 (Refinor)', tel: '4224442' },
+              { dir: 'Av. Juan B Justo 949', tel: '4217135' },
+              { dir: 'Av. Néstor Kirchner 2310', tel: '4830500' },
+              { dir: 'Lavalle 2770', tel: '4234590' },
+              { dir: 'Av. Aconquija 2099, Yerba Buena', tel: '4256840' },
+              { dir: 'Santiago 589', tel: '4222897' },
+              { dir: 'Mendoza 795', tel: '4526030' },
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 shrink-0" />
+                <div>
+                  <p className="text-gray-900 font-medium">{item.dir}</p>
+                  <p className="text-amber-700 text-xs font-bold mt-0.5">📞 {item.tel}</p>
+                </div>
+              </div>
+            ))}
+          </AccordionZone>
+
+          {/* Las Salinas */}
+          <AccordionZone title="Farmacia Las Salinas" colorClass="text-amber-600" borderClass="border-amber-100" bgClass="bg-amber-50" icon={MapPin}>
+            <div className="flex items-start gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 shrink-0" />
+              <div>
+                <p className="text-gray-900 font-medium">Av. Rivadavia 1080, Alderetes</p>
+                <p className="text-amber-700 text-xs font-bold mt-0.5">📞 4942935</p>
+              </div>
+            </div>
+          </AccordionZone>
+
+          {/* San Benito */}
+          <AccordionZone title="Farmacia San Benito" colorClass="text-amber-600" borderClass="border-amber-100" bgClass="bg-amber-50" icon={MapPin}>
+            <div className="flex items-start gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 shrink-0" />
+              <div>
+                <p className="text-gray-900 font-medium">Av. Rivadavia 895, Alderetes</p>
+                <p className="text-amber-700 text-xs font-bold mt-0.5">📞 4942938</p>
+              </div>
+            </div>
+          </AccordionZone>
+
+          {/* Ingenio La Florida */}
+          <AccordionZone title="Farmacia Ingenio La Florida" colorClass="text-amber-600" borderClass="border-amber-100" bgClass="bg-amber-50" icon={MapPin}>
+            <div className="flex items-start gap-2">
+              <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 shrink-0" />
+              <div>
+                <p className="text-gray-900 font-medium">Av. Landajo 1° Cuadra, La Florida</p>
+              </div>
+            </div>
+          </AccordionZone>
+
+          {/* Del Pueblo */}
+          <AccordionZone title="Farmacia Del Pueblo" colorClass="text-amber-600" borderClass="border-amber-100" bgClass="bg-amber-50" icon={MapPin}>
+             {[
+              { dir: 'Av. Monseñor Diaz N°499, Banda del Rio Salí', tel: null },
+              { dir: '25 de Mayo N°313', tel: '4216600' },
+              { dir: 'Córdoba N°652', tel: '4979181' },
+              { dir: 'Laprida N°3', tel: '4227513' },
+              { dir: 'Av. Aconquija N°1336', tel: '4256444' },
+              { dir: 'Av. Alem N°199', tel: '4244540' },
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 shrink-0" />
+                <div>
+                  <p className="text-gray-900 font-medium">{item.dir}</p>
+                  {item.tel && <p className="text-amber-700 text-xs font-bold mt-0.5">📞 {item.tel}</p>}
+                </div>
+              </div>
+            ))}
+          </AccordionZone>
+        </div>
+
+        <div className="text-center p-2 mt-4">
+          <span className="inline-block px-4 py-2 bg-amber-100 text-amber-800 font-bold rounded-full text-xs uppercase tracking-wide">
             Descuentos del 20% al 30%
           </span>
         </div>
@@ -149,7 +287,7 @@ const detalleServicios = {
 
 const beneficiosPrincipales = [
   { id: 'Ambulancia', icon: Ambulance, title: 'Servicio de Ambulancia (SEM)', text: 'Guardia las 24 hs para emergencias.', color: 'bg-blue-50 text-blue-600' },
-  { id: 'Guardia', icon: Activity, title: 'Guardia Sanatorio del Sur', text: 'Atención permanente en Santiago 1251.', color: 'bg-red-50 text-red-600' },
+  { id: 'Guardia', icon: Activity, title: 'Guardia Sanatorio del Sur', text: 'Atención permanente en Las Heras 575, S.M.T.', color: 'bg-red-50 text-red-600' },
   { id: 'Laboratorios', icon: Microscope, title: 'Laboratorios (20% a 30%)', text: 'Red en toda la provincia.', color: 'bg-emerald-50 text-emerald-600' },
   { id: 'Farmacias', icon: Pill, title: 'Farmacias (20% a 30%)', text: 'Descuentos con pedido médico.', color: 'bg-amber-50 text-amber-600' },
 ]
@@ -182,7 +320,6 @@ export default function Servicios() {
               <h4 className="text-lg font-bold text-gray-900 mb-3">{item.title}</h4>
               <p className="text-sm text-gray-600 mb-8">{item.text}</p>
               
-              {/* Botón de Ver más corregido (Azul, letra blanca, más grande, sin +) */}
               <button 
                 onClick={() => setActiveModal(item.id)}
                 className="w-full py-3.5 bg-[#00BCD4] text-white rounded-xl text-sm font-bold shadow-md shadow-[#00BCD4]/20 transition-all hover:bg-[#0097A7] hover:shadow-lg mt-auto"
@@ -262,7 +399,7 @@ export default function Servicios() {
             <div className="relative hidden lg:block">
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 <img 
-                  src="/servicio-medico.jpg" 
+                  src="/guardiaoftlmologia.jpg" 
                   alt="Atención Médica Red Salud" 
                   className="w-full h-full object-cover"
                 />
@@ -307,6 +444,7 @@ export default function Servicios() {
                 {detalleServicios[activeModal as keyof typeof detalleServicios].title}
               </h3>
             </div>
+            {/* Scrollable container */}
             <div className="max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
               {detalleServicios[activeModal as keyof typeof detalleServicios].content}
             </div>
