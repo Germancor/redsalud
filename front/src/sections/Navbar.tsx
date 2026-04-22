@@ -6,7 +6,7 @@ const navLinks = [
   { label: 'Cómo Funciona', href: '#como-funciona' },
   { label: 'Planes', href: '#planes' },
   { label: 'Testimonios', href: '#testimonios' },
-  { label: 'Preguntas', href: '#faq' },
+  //{ label: 'Preguntas', href: '#faq' },
   { label: 'Contacto', href: '#contacto' },
 ]
 
@@ -59,15 +59,14 @@ export default function Navbar() {
       {/* Main navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-brand flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
-              <span className="text-white font-bold text-lg">R</span>
-            </div>
-            <div className="leading-tight">
-              <span className="text-lg font-bold text-[#00BCD4] block -mb-0.5">Red Salud</span>
-              <span className="text-xs text-gray-500 font-medium">Tucumán</span>
-            </div>
+          
+          {/* Logo Original Reemplazado por tu Imagen */}
+          <a href="#" className="flex items-center group py-1">
+            <img 
+              src="/logo_horizontal2.png" 
+              alt="Red Salud Tucumán" 
+              className="h-12 sm:h-14 w-auto object-contain transition-transform group-hover:scale-105"
+            />
           </a>
 
           {/* Desktop nav */}

@@ -35,14 +35,12 @@ export default function Footer() {
           
           {/* Columna Principal: Marca y Contacto */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00BCD4] to-[#00838F] flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">R</span>
-              </div>
-              <div className="leading-tight">
-                <span className="text-lg font-bold text-white block -mb-0.5">Red Salud</span>
-                <span className="text-xs text-gray-500 font-medium">Tucumán</span>
-              </div>
+            <div className="mb-6 inline-block">
+              <img 
+                src="/logo_horizontal2.png"
+                alt="Red Salud Tucumán" 
+                className="h-14 w-auto object-contain filter" 
+              />
             </div>
             <p className="text-sm leading-relaxed mb-6 max-w-sm">
               Cobertura médica y servicio de sepelio para familias de Tucumán. Más de 15 años brindando tranquilidad y respaldo.
