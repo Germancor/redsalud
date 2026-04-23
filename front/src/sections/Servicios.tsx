@@ -399,7 +399,7 @@ export default function Servicios() {
             <div className="relative hidden lg:block">
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 <img 
-                  src="/guardiaoftlmologia.jpg" 
+                  src="/servicio-medico.jpg" 
                   alt="Atención Médica Red Salud" 
                   className="w-full h-full object-cover"
                 />

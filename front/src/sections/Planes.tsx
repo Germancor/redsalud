@@ -26,7 +26,7 @@ const planesSalud = [
       'Prácticas de Diagnóstico y exámenes complementarios',
       'Descuentos en farmacia de hasta 30%',
       'Emergencia y consulta médica a domicilio 24 hs',
-      'Sepelio: Sala velatoria o capilla ardiente',
+      'Sepelio: Sala velatoria o capilla ardiente. Imhumación',
       'Cementerios: San Antonio, Parque Sereno y Parque de la Paz',
     ],
     popular: true,
