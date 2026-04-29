@@ -59,11 +59,18 @@ export default function Footer() {
                 </div>
                 381-660-3741
               </a>
-              <div className="flex items-start gap-3 text-sm">
+              <div className="space-y-4 mb-8">
+                <a
+                  href="https://www.google.com/maps?q=Batalla+de+Chacabuco+220+San+Miguel+de+Tucumán"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 text-sm hover:text-[#00BCD4] transition-colors group"
+                >
                 <div className="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center shrink-0">
                   <MapPin className="w-4 h-4" />
-                </div>
-                <span className="mt-1.5">Batalla de Chacabuco 220, San Miguel de Tucumán</span>
+                </div>  
+                  <span className="mt-1.5">Batalla de Chacabuco 220, San Miguel de Tucumán</span>
+                </a>
               </div>
               <a href="mailto:redsaludsc@gmail.com" className="flex items-center gap-3 text-sm hover:text-[#00BCD4] transition-colors group">
                 <div className="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center shrink-0 group-hover:bg-[#00BCD4]/20">
