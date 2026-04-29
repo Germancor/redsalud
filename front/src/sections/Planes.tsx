@@ -62,7 +62,8 @@ const infoSepelio = {
     'Servicio de emergencia médica y consulta a domicilio',
   ],
   notaCremacion: 'Módulo cremación: Costo adicional',
-  imagen: '/servicio-sepelio.jpg'
+  imagen: '/servicio-sepelio.jpg',
+  whatsappMsg: 'Hola,%20quiero%20información%20sobre%20el%20Plan%20Sepelio',
 }
 
 export default function Planes() {
@@ -144,7 +145,10 @@ export default function Planes() {
 
               <div className="flex items-center gap-3 p-4 bg-white rounded-2xl shadow-sm border border-gray-100 w-fit">
                 <Phone className="w-5 h-5 text-green-500" />
-                <a href={`tel:${infoSepelio.telefono}`} className="text-xl font-bold text-gray-900 hover:text-[#00BCD4] transition-colors">
+                <a href={`https://wa.me/5493815447295?text=${infoSepelio.whatsappMsg || 'Hola'}`} 
+                className="text-xl font-bold text-gray-900 hover:text-[#00BCD4] transition-colors"
+                target="_blank"
+                >
                   {infoSepelio.telefono}
                 </a>
               </div>
