@@ -331,7 +331,7 @@ export default function Servicios() {
         </div>
 
         {/* Sección inferior: Cobertura Médica y Social */}
-        <div className="bg-gray-50 rounded-[3rem] p-8 sm:p-12">
+        <div id="cobertura-medica" className="bg-gray-50 rounded-[3rem] p-8 sm:p-12">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Cobertura Médica y Social</h3>

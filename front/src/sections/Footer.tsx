@@ -2,9 +2,9 @@ import { Phone, Mail, MapPin, Heart, Instagram, Facebook } from 'lucide-react'
 
 const footerLinks = {
   servicios: [
-    { label: 'Cobertura médica', href: '#servicios' },
-    { label: 'Servicio de sepelio', href: '#servicios' },
-    { label: 'Emergencias 24hs', href: '#servicios' },
+    { label: 'Cobertura médica', href: '#cobertura-medica' },
+    { label: 'Servicio de sepelio', href: '#planes' },
+    { label: 'Emergencias 24hs', href: '#contacto' },
     { label: 'Cartilla médica', href: '#servicios' },
   ],
   planes: [
@@ -13,8 +13,8 @@ const footerLinks = {
     { label: 'Plan Premium', href: '#planes' },
   ],
   empresa: [
-    { label: 'Sobre nosotros', href: '#' },
-    { label: 'Preguntas frecuentes', href: '#faq' },
+    { label: 'Sobre nosotros', href: '#hero' },
+    { label: 'Preguntas frecuentes', href: '#como-funciona' },
     { label: 'Términos y condiciones', href: '#' },
     { label: 'Política de privacidad', href: '#' },
   ],
@@ -48,17 +48,29 @@ export default function Footer() {
             
             {/* Info de contacto: Teléfono, Ubicación y Email Escrito */}
             <div className="space-y-4 mb-8">
-              <a href="tel:+5493816603741" className="flex items-center gap-3 text-sm hover:text-[#00BCD4] transition-colors group">
+              <a
+                href="https://wa.me/5493816603741?text=Hola,%20quiero%20recibir%20información%20sobre%20Red%20Salud%20Tucumán"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-sm hover:text-[#00BCD4] transition-colors group"
+              >
                 <div className="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center shrink-0 group-hover:bg-[#00BCD4]/20">
                   <Phone className="w-4 h-4 group-hover:text-[#00BCD4]" />
                 </div>
                 381-660-3741
               </a>
-              <div className="flex items-start gap-3 text-sm">
+              <div className="space-y-4 mb-8">
+                <a
+                  href="https://www.google.com/maps?q=Batalla+de+Chacabuco+220+San+Miguel+de+Tucumán"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 text-sm hover:text-[#00BCD4] transition-colors group"
+                >
                 <div className="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center shrink-0">
                   <MapPin className="w-4 h-4" />
-                </div>
-                <span className="mt-1.5">Batalla de Chacabuco 220, San Miguel de Tucumán</span>
+                </div>  
+                  <span className="mt-1.5">Batalla de Chacabuco 220, San Miguel de Tucumán</span>
+                </a>
               </div>
               <a href="mailto:redsaludsc@gmail.com" className="flex items-center gap-3 text-sm hover:text-[#00BCD4] transition-colors group">
                 <div className="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center shrink-0 group-hover:bg-[#00BCD4]/20">

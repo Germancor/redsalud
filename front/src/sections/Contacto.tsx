@@ -49,7 +49,14 @@ export default function Contacto() {
             <p className="text-sm text-gray-500 mb-4">Call Center centralizado</p>
             <div className="flex items-center gap-2">
               <Phone className="w-5 h-5 text-[#E91E63]" />
-              <a href="tel:+5493816603741" className="text-2xl font-bold text-[#E91E63]">381 660 3741</a>
+              <a
+                href="https://wa.me/5493816603741?text=Hola,%20quiero%20recibir%20información%20sobre%20Red%20Salud%20Tucumán"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-2xl font-bold text-[#E91E63]"
+              >
+                381 660 3741
+              </a>
             </div>
           </div>
 

@@ -44,7 +44,9 @@ export default function Navbar() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-1.5 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <a
-                href="tel:+5493816603741"
+                href="https://wa.me/5493816603741?text=Hola,%20quiero%20recibir%20información%20sobre%20Red%20Salud%20Tucumán"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-1 hover:text-white/80 transition-colors"
               >
                 <Phone className="w-3 h-3" />
