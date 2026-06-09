@@ -35,7 +35,8 @@ export default function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
               <a
-                href="https://wa.me/5493816603741?text=Hola,%20quiero%20recibir%20información%20sobre%20Red%20Salud%20Tucumán"
+                //href="https://wa.me/5493816603741?text=Hola,%20quiero%20recibir%20información%20sobre%20Red%20Salud%20Tucumán"
+                href="https://wa.me/5493813616319?text=Hola,%20quiero%20recibir%20información%20sobre%20Red%20Salud%20Tucumán"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white bg-gradient-brand rounded-full hover:shadow-xl hover:shadow-[#E91E63]/25 transition-all hover:-translate-y-1"

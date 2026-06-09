@@ -46,11 +46,15 @@ const detalleServicios = {
         <div className="bg-blue-50 p-4 rounded-xl">
           <p className="font-bold text-blue-800 mb-3">Números de Emergencia:</p>
           <div className="flex flex-col gap-3">
-            <a href="tel:2540617" className="flex items-center gap-3 text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors">
-              <Phone className="w-5 h-5 text-blue-500"/> 2540617
+            <a href="tel:+543812540617" className="flex items-center gap-3 text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors">
+              <Phone className="w-5 h-5 text-blue-500"/> (381) 2540617
             </a>
-            <a href="tel:4238966" className="flex items-center gap-3 text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors">
-              <Phone className="w-5 h-5 text-blue-500"/> 4238966
+            <a href="https://wa.me/5493816994478" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors"
+              >
+              <Phone className="w-5 h-5 text-blue-500"/> (381) 6994478
             </a>
           </div>
         </div>

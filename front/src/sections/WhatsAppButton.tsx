@@ -40,14 +40,14 @@ export default function WhatsAppButton() {
 
       {/* Button */}
       <a
-        href="https://wa.me/5493816603741?text=Hola,%20quiero%20recibir%20información%20sobre%20Red%20Salud%20Tucumán"
+        //href="https://wa.me/5493816603741?text=Hola,%20quiero%20recibir%20información%20sobre%20Red%20Salud%20Tucumán" Numeor anterior pero es de cobranzas
+        href="https://wa.me/5493813616319?text=Hola,%20quiero%20recibir%20información%20sobre%20Red%20Salud%20Tucumán"
         target="_blank"
         rel="noopener noreferrer"
         className="group flex items-center gap-2 px-5 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
       >
         <MessageCircle className="w-6 h-6" />
         <span className="text-sm font-semibold hidden sm:inline">Escribinos por WhatsApp</span>
-        <span className="text-sm font-semibold sm:hidden">WhatsApp</span>
       </a>
     </div>
   )
