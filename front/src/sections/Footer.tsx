@@ -49,7 +49,7 @@ export default function Footer() {
             {/* Info de contacto: Teléfono, Ubicación y Email Escrito */}
             <div className="space-y-4 mb-8">
               <a
-                href="https://wa.me/5493816603741?text=Hola,%20quiero%20recibir%20información%20sobre%20Red%20Salud%20Tucumán"
+                href="https://wa.me/5493813616319?text=Hola,%20quiero%20recibir%20información%20sobre%20Red%20Salud%20Tucumán"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-sm hover:text-[#00BCD4] transition-colors group"
@@ -57,7 +57,7 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center shrink-0 group-hover:bg-[#00BCD4]/20">
                   <Phone className="w-4 h-4 group-hover:text-[#00BCD4]" />
                 </div>
-                381-660-3741
+                381-361-6319
               </a>
               <div className="space-y-4 mb-8">
                 <a
