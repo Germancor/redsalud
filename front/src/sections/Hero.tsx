@@ -16,7 +16,7 @@ export default function Hero() {
       </div>
     
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center pt-6">
           <div className="text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#00BCD4]/10 text-[#00BCD4] rounded-full text-sm font-medium mb-6">
               <Shield className="w-4 h-4" />
