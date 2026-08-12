@@ -18,7 +18,6 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="text-center lg:text-left">
-            <br />
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#00BCD4]/10 text-[#00BCD4] rounded-full text-sm font-medium mb-6">
               <Shield className="w-4 h-4" />
               Cobertura médica + Sepelio en Tucumán
@@ -75,8 +74,11 @@ export default function Hero() {
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-gray-200/50">
               <img
-                src="/hero-family.jpg"
+                src="/hero-family.webp"
                 alt="Familia protegida con Red Salud Tucumán"
+                width={1344}
+                height={768}
+                fetchPriority="high"
                 className="w-full h-auto object-cover"
               />
               {/* Floating card */}
