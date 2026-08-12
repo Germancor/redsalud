@@ -78,7 +78,6 @@ export default function Hero() {
                 alt="Familia protegida con Red Salud Tucumán"
                 width={1344}
                 height={768}
-                fetchPriority="high"
                 className="w-full h-auto object-cover"
               />
               {/* Floating card */}
