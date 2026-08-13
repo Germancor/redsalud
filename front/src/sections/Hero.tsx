@@ -76,8 +76,8 @@ export default function Hero() {
               <img
                 src="/hero-family.webp"
                 alt="Familia protegida con Red Salud Tucumán"
-                width={1344}
-                height={768}
+                width={700}
+                height={400}
                 fetchPriority="high"
                 className="w-full h-auto object-cover"
               />
