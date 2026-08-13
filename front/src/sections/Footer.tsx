@@ -37,8 +37,10 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="mb-6 inline-block">
               <img 
-                src="/logo_horizontal2.png"
+                src="/logo_horizontal2.webp"
                 alt="Red Salud Tucumán" 
+                width={180}
+                height={122}
                 className="h-14 w-auto object-contain filter" 
               />
             </div>
