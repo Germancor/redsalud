@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -39,6 +47,7 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family:
+      "Inter",
       system-ui,
       -apple-system,
       sans-serif;
