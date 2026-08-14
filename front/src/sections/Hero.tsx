@@ -8,12 +8,14 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50/30">
+    <section id="hero" className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden bg-white"
+    //className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50/30"
+    >
       {/* Background decoration */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-[#00BCD4]/5 rounded-full  translate-y-1/2 translate-x-1/4" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00BCD4]/5 rounded-full  translate-y-1/4 -translate-x-1/4" />
-      </div>
+        {/* <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-[#00BCD4]/5 rounded-full  translate-y-1/2 translate-x-1/4" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00BCD4]/5 rounded-full  translate-y-1/4 -translate-x-1/4" />
+        </div> */}
     
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center pt-6">
@@ -82,7 +84,8 @@ export default function Hero() {
                 className="w-full h-auto object-cover"
               />
               {/* Floating card */}
-              <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/50">
+              <div className="absolute bottom-6 left-6 right-6 bg-white/95 rounded-2xl p-4 shadow-lg border border-white/50">
+                {/*backdrop-blur-sm*/}
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
                     <Shield className="w-6 h-6 text-green-600" />
