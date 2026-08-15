@@ -175,6 +175,7 @@ export default function Planes() {
                   alt="Plan Sepelio Red Salud" 
                   width={800}
                   height={584}
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>

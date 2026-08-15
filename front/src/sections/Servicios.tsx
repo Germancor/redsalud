@@ -407,6 +407,7 @@ export default function Servicios() {
                   alt="Atención Médica Red Salud" 
                   width={800}
                   height={584}
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>
