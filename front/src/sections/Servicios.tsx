@@ -403,8 +403,10 @@ export default function Servicios() {
             <div className="relative hidden lg:block">
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 <img 
-                  src="/servicio-medico.jpg" 
+                  src="/servicio-medico.webp" 
                   alt="Atención Médica Red Salud" 
+                  width={800}
+                  height={584}
                   className="w-full h-full object-cover"
                 />
               </div>

@@ -65,10 +65,10 @@ export default function Navbar() {
           {/* Logo Original Reemplazado por tu Imagen */}
           <a href="#" className="flex items-center group py-1">
             <img 
-              src="/logo_horizontal2.webp" 
+              src="/logo-horizontal3.webp" 
               alt="Red Salud Tucumán" 
-              width={180}
-              height={122}
+              width={130}
+              height={88}
               className="h-12 sm:h-14 w-auto object-contain transition-transform group-hover:scale-105"
             />
           </a>

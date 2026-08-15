@@ -62,7 +62,7 @@ const infoSepelio = {
     'Servicio de emergencia médica y consulta a domicilio',
   ],
   notaCremacion: 'Módulo cremación: Costo adicional',
-  imagen: '/servicio-sepelio.jpg',
+  imagen: '/servicio-sepelio.webp',
   whatsappMsg: 'Hola,%20quiero%20información%20sobre%20el%20Plan%20Sepelio',
 }
 
@@ -173,6 +173,8 @@ export default function Planes() {
                 <img 
                   src={infoSepelio.imagen} 
                   alt="Plan Sepelio Red Salud" 
+                  width={800}
+                  height={584}
                   className="w-full h-full object-cover"
                 />
               </div>
