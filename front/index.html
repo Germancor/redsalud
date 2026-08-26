@@ -35,11 +35,7 @@
     <title>Red Salud Tucumán | Cobertura Médica y Sepelio Integral</title>
     <meta
       name="description"
-      content="Protegé a tu familia con la mejor cobertura médica y servicio de sepelio integral en Tucumán. Atención 24hs, amplia cartilla de médicos y descuentos en farmacias."
-    />
-    <meta
-      name="keywords"
-      content="seguro de salud Tucumán, cobertura médica Tucumán, sepelio Tucumán, Red Salud Tucumán, cartilla médica"
+      content="Cobertura médica y servicio de sepelio integral en Tucumán. Atención 24 hs, amplia cartilla médica y beneficios en farmacias para vos y tu familia."
     />
     <meta name="author" content="Red Salud Tucumán" />
     <meta name="robots" content="index, follow" />
@@ -51,7 +47,7 @@
     />
     <meta
       property="og:description"
-      content="Protegé a tu familia con la mejor cobertura médica y servicio de sepelio integral en Tucumán. Atención las 24 hs."
+      content="Cobertura médica y servicio de sepelio integral en Tucumán. Atención 24 hs, amplia cartilla médica y beneficios en farmacias para vos y tu familia."
     />
     <meta property="og:url" content="https://www.redsaludtucuman.com.ar/" />
     <meta property="og:site_name" content="Red Salud Tucumán" />
@@ -72,25 +68,58 @@
     <meta name="theme-color" content="#00BCD4" />
     <link rel="canonical" href="https://www.redsaludtucuman.com.ar/" />
 
-    <script type="application/ld+json">
+<script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Red Salud Tucumán",
-        "image": "https://www.redsaludtucuman.com.ar/logo_horizontal.jpeg",
-        "@id": "https://www.redsaludtucuman.com.ar/",
-        "url": "https://www.redsaludtucuman.com.ar/",
-        "telephone": "+5493813616319",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Batalla de Chacabuco 220",
-          "addressLocality": "San Miguel de Tucumán",
-          "addressRegion": "Tucumán",
-          "postalCode": "T4000",
-          "addressCountry": "AR"
-        },
-        "description": "Cobertura médica y servicio de sepelio integral para familias en Tucumán. Emergencias 24 hs y red de farmacias.",
-        "areaServed": "Tucumán"
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://www.redsaludtucuman.com.ar/#business",
+            "name": "Red Salud Tucumán",
+            "url": "https://www.redsaludtucuman.com.ar/",
+            "image": "https://www.redsaludtucuman.com.ar/logo_horizontal.jpeg",
+            "logo": "https://www.redsaludtucuman.com.ar/logo_horizontal.jpeg",
+            "telephone": "+5493813616319",
+            "description": "Cobertura médica y servicio de sepelio integral para familias en Tucumán. Atención 24 hs, cartilla médica y beneficios en farmacias.",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Batalla de Chacabuco 220",
+              "addressLocality": "San Miguel de Tucumán",
+              "addressRegion": "Tucumán",
+              "postalCode": "T4000",
+              "addressCountry": "AR"
+            },
+            "areaServed": {
+              "@type": "AdministrativeArea",
+              "name": "Tucumán"
+            },
+            "sameAs": [
+              "https://www.instagram.com/redsalud.tuc/",
+              "https://www.facebook.com/p/RED-SALUD-Tucum%C3%A1n-61569796081263/"
+            ]
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://www.redsaludtucuman.com.ar/#organization",
+            "name": "Red Salud Tucumán",
+            "url": "https://www.redsaludtucuman.com.ar/",
+            "logo": "https://www.redsaludtucuman.com.ar/logo_horizontal.jpeg",
+            "sameAs": [
+              "https://www.instagram.com/redsalud.tuc/",
+              "https://www.facebook.com/p/RED-SALUD-Tucum%C3%A1n-61569796081263/"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.redsaludtucuman.com.ar/#website",
+            "name": "Red Salud Tucumán",
+            "url": "https://www.redsaludtucuman.com.ar/",
+            "inLanguage": "es-AR",
+            "publisher": {
+              "@id": "https://www.redsaludtucuman.com.ar/#organization"
+            }
+          }
+        ]
       }
     </script>
   </head>
